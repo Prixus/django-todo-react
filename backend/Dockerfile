@@ -5,10 +5,10 @@
 # pull official base image
 FROM python:3.7.9-slim-stretch as builder
 
-# set work directory 
+# set work directory
 WORKDIR /usr/src/app
 
-# set environment variables 
+# set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
@@ -42,7 +42,7 @@ WORKDIR /usr/src/app
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 
 # copy our django project
-COPY ./backend .
+COPY backend .
 
 # run entrypoint.sh
 RUN chmod +x /usr/src/app/entrypoint.sh
